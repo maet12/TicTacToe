@@ -1,0 +1,59 @@
+body{
+  margin: 0;
+  background: #86B86B;
+  color: #ECECEC;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+
+.juego{
+  width: 60%;
+  height: 200px;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.board{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rowBoard{
+  width: 100%;
+}
+
+.border-botton{
+  border-bottom: 4px solid #FFBC2C;
+}
+
+.border-rigth{
+  border-right:  4px solid #FFBC2C;
+}
+
+.rowBoard div{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+footer{
+	color:white;
+	height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+}
