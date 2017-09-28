@@ -1,12 +1,12 @@
-const boxes = [document.getElementById('box1'),
-              document.getElementById('box2'),
-              document.getElementById('box3'),
-              document.getElementById('box4'),
-              document.getElementById('box5'),
-              document.getElementById('box6'),
-              document.getElementById('box7'),
-              document.getElementById('box8'),
-              document.getElementById('box9')]
+const boxes = [document.getElementById('1'),
+              document.getElementById('2'),
+              document.getElementById('3'),
+              document.getElementById('4'),
+              document.getElementById('5'),
+              document.getElementById('6'),
+              document.getElementById('7'),
+              document.getElementById('8'),
+              document.getElementById('9')]
 
 const markers = [document.getElementById('mark1'),
               document.getElementById('mark2'),
@@ -18,19 +18,29 @@ const markers = [document.getElementById('mark1'),
               document.getElementById('mark8'),
               document.getElementById('mark9')]
 
+var jugardorActual = 1;
+function inicarJuego() {
+  boxes[0].addEventListener('click',handler);
+  boxes[1].addEventListener('click',handler);
+  boxes[2].addEventListener('click',handler);
+  boxes[3].addEventListener('click',handler);
+  boxes[4].addEventListener('click',handler);
+  boxes[5].addEventListener('click',handler);
+  boxes[6].addEventListener('click',handler);
+  boxes[7].addEventListener('click',handler);
+  boxes[8].addEventListener('click',handler);
+}
 
-  boxes[0].addEventListener('click', () => putMark(1));
-  boxes[1].addEventListener('click', () => putMark(2));
-  boxes[2].addEventListener('click', () => putMark(3));
-  boxes[3].addEventListener('click', () => putMark(4));
-  boxes[4].addEventListener('click', () => putMark(5));
-  boxes[5].addEventListener('click', () => putMark(6));
-  boxes[6].addEventListener('click', () => putMark(7));
-  boxes[7].addEventListener('click', () => putMark(8));
-  boxes[8].addEventListener('click', () => putMark(9));
+var handler = function putMark(e) {
+  console.log(e);
+  if (jugardorActual===1)
+    markers[e.target.id-1].classList.toggle('icon-cross')
+  else
+    markers[e.target.id-1].classList.toggle('icon-radio-unchecked')
 
+  boxes[e.target.id-1].removeEventListener('click', handler)
+  jugardorActual = jugardorActual===1 ? 2 : 1
+  console.log(jugardorActual);
+}
 
-  function putMark(num) {
-    markers[num-1].classList.toggle('icon-cross')
-    boxes[num-1].removeEventListener('click',() => putMark(num))
-  }
+inicarJuego()

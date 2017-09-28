@@ -79,6 +79,18 @@ header{
   justify-content: center;
 }
 
+.rowBoard div:hover{
+  cursor: pointer;
+}
+
+.rowBoard div .icon-cross:hover{
+  cursor: default;
+}
+
+.rowBoard div .icon-radio-unchecked:hover{
+  cursor: default;
+}
+
 .mark{
   font-size: 100px;
 }
