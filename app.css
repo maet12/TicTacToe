@@ -49,7 +49,6 @@ header{
 .juego{
   flex: 1;
   margin: 0 auto;
-  text-align: center;
   display: flex;
   align-items: center;
 }
@@ -73,15 +72,14 @@ header{
 }
 
 .rowBoard div{
-  display: inline-block;
+  display: flex;
   width: 180px;
   height: 180px;
   align-items: center;
-  text-align: center;
+  justify-content: center;
 }
 
 .mark{
-  display: inline-block;
   font-size: 100px;
 }
 
